@@ -17,9 +17,13 @@ async def add_number_2(number: int) -> int:
 
 async def main() -> None:
     sleep_for_three = asyncio.create_task(delay(3))
-    print(type(sleep_for_three))
-    result = await sleep_for_three
-    print(result)
+    sleep_again = asyncio.create_task(delay(3))
+    sleep_again_2 = asyncio.create_task(delay(3))
+
+    await sleep_for_three
+    await sleep_for_three
+    await sleep_again_2
+
 
 if __name__ == '__main__':
     asyncio.run(main())
