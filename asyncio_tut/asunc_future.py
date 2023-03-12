@@ -15,9 +15,9 @@ async def set_future_value(future):
 
 async def main():
     future = make_request()
-    print(f'Будущий объект готов ? {future.done()}')
+    print(f'Будущий объект готов? {future.done()}')
     value = await future
-    print(f'Будущий объект готов ? {future.done()}')
+    print(f'Будущий объект готов? {future.done()}')
     print(value)
 
 
