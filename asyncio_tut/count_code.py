@@ -10,15 +10,12 @@ async def cpu_bound_work() -> int:
     return counter
 
 
-@async_timed()
+
 async def main():
     task_one = asyncio.create_task(cpu_bound_work())
-    task_two = asyncio.create_task(cpu_bound_work())
-    task_three = asyncio.create_task(delay(3))
-    await task_three
+
     await task_one
-    await task_two
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(main(), debug=True)
